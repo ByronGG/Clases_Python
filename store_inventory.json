@@ -1,0 +1,188 @@
+{
+    "store_name": "Tech Haven",
+    "address": "123 Main Street, Cityville",
+    "inventory": [
+        {
+            "id": 1,
+            "name": "Laptop Pro 14",
+            "category": "Electronics",
+            "price": 1200.99,
+            "stock": 15
+        },
+        {
+            "id": 2,
+            "name": "Wireless Mouse",
+            "category": "Accessories",
+            "price": 25.5,
+            "stock": 50
+        },
+        {
+            "id": 3,
+            "name": "Gaming Keyboard",
+            "category": "Accessories",
+            "price": 75.99,
+            "stock": 30
+        },
+        {
+            "id": 4,
+            "name": "4K Monitor",
+            "category": "Electronics",
+            "price": 320.0,
+            "stock": 10
+        },
+        {
+            "id": 5,
+            "name": "Smartphone XR",
+            "category": "Electronics",
+            "price": 899.99,
+            "stock": 20
+        },
+        {
+            "id": 6,
+            "name": "Noise Cancelling Headphones",
+            "category": "Accessories",
+            "price": 199.99,
+            "stock": 25
+        },
+        {
+            "id": 7,
+            "name": "External Hard Drive 1TB",
+            "category": "Storage",
+            "price": 89.99,
+            "stock": 40
+        },
+        {
+            "id": 8,
+            "name": "USB-C Charger",
+            "category": "Accessories",
+            "price": 15.99,
+            "stock": 0
+        },
+        {
+            "id": 9,
+            "name": "Action Camera",
+            "category": "Cameras",
+            "price": 450.0,
+            "stock": 5
+        },
+        {
+            "id": 10,
+            "name": "Tripod Stand",
+            "category": "Cameras",
+            "price": 35.0,
+            "stock": 20
+        },
+        {
+            "id": 11,
+            "name": "Smartwatch Series 5",
+            "category": "Wearables",
+            "price": 299.99,
+            "stock": 18
+        },
+        {
+            "id": 12,
+            "name": "Bluetooth Speaker",
+            "category": "Accessories",
+            "price": 49.99,
+            "stock": 30
+        },
+        {
+            "id": 13,
+            "name": "Gaming Chair",
+            "category": "Furniture",
+            "price": 249.99,
+            "stock": 10
+        },
+        {
+            "id": 14,
+            "name": "Portable Projector",
+            "category": "Electronics",
+            "price": 399.99,
+            "stock": 7
+        },
+        {
+            "id": 15,
+            "name": "SSD 512GB",
+            "category": "Storage",
+            "price": 120.0,
+            "stock": 25
+        },
+        {
+            "id": 16,
+            "name": "Wireless Earbuds",
+            "category": "Accessories",
+            "price": 99.99,
+            "stock": 60
+        },
+        {
+            "id": 17,
+            "name": "Graphic Tablet",
+            "category": "Electronics",
+            "price": 350.0,
+            "stock": 12
+        },
+        {
+            "id": 18,
+            "name": "VR Headset",
+            "category": "Gaming",
+            "price": 499.99,
+            "stock": 8
+        },
+        {
+            "id": 19,
+            "name": "Fitness Tracker",
+            "category": "Wearables",
+            "price": 69.99,
+            "stock": 40
+        },
+        {
+            "id": 20,
+            "name": "Digital Drawing Pen",
+            "category": "Accessories",
+            "price": 29.99,
+            "stock": 35
+        },
+        {
+            "id": 21,
+            "name": "Router AX3000",
+            "category": "Networking",
+            "price": 150.0,
+            "stock": 20
+        },
+        {
+            "id": 22,
+            "name": "Gaming Mouse Pad",
+            "category": "Accessories",
+            "price": 19.99,
+            "stock": 70
+        },
+        {
+            "id": 23,
+            "name": "Desktop Tower Case",
+            "category": "Electronics",
+            "price": 99.99,
+            "stock": 15
+        },
+        {
+            "id": 24,
+            "name": "3D Printer Filament",
+            "category": "Supplies",
+            "price": 25.99,
+            "stock": 100
+        },
+        {
+            "id": 25,
+            "name": "Ergonomic Office Desk",
+            "category": "Furniture",
+            "price": 450.0,
+            "stock": 5
+        },
+        {
+            "id": 30,
+            "name": "XBox",
+            "category": "Gaming",
+            "price": 799.99,
+            "stock": 10
+        }
+    ]
+}

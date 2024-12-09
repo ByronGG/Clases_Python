@@ -1,0 +1,11 @@
+{
+    "name": "Luis",
+    "age": 24,
+    "is_student": false,
+    "courses": ["Math", "Poo", "Physics"],
+    "address":{
+        "city": "Cd. Madero",
+        "zip": "89000",
+        "street": "Ave. Ejercito"
+    }
+}
