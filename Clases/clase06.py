@@ -1,10 +1,12 @@
 # Herencia
+from abc import ABC, abstractmethod
 
 # Clase Padre
 class Animal:
     def __init__(self, nombre):  # Atributos
         self.nombre = nombre
-
+        
+    @abstractmethod
     def sonido(self): # Método
         return "El animal hace un sonido"
     
