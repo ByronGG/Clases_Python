@@ -22,16 +22,16 @@ def sumar(a: int, b: int) -> int:
     return a + b
 
 # Prueba unitaria usando unittest
-class TestSumar(unittest.TestCase):
+### class TestSumar(unittest.TestCase):
 
-    def test_sumar_positivos(self):
-        self.assertEqual(sumar(3, 5), 8)
+ #####   def test_sumar_positivos(self):
+ ###       self.assertEqual(sumar(3, 5), 8)
 
-    def test_sumar_negativos(self):
-        self.assertEqual(sumar(-5, -3), -8)
+  ###  def test_sumar_negativos(self):
+ ###       self.assertEqual(sumar(-5, -3), -8)
 
-    def test_sumar_mixtos(self):
-        self.assertEqual(sumar(-2, 5), 3)
+ ###   def test_sumar_mixtos(self):
+  ###      self.assertEqual(sumar(-2, 5), 3)
 
 # if __name__ == '__main__':
 #     unittest.main()
@@ -56,7 +56,7 @@ lanza una excepción con el mensaje: "Acción no válida".
 def gestionar_cadena(cadena, acccion=None):
     if acccion == "reversa":
         return cadena[::-1]
-    elif acccion == "mayuscaulas":
+    elif acccion == "mayusculas":
         return cadena.upper()
     elif acccion == "minusculas":
         return cadena.lower()
@@ -65,3 +65,32 @@ def gestionar_cadena(cadena, acccion=None):
     else:
         raise ValueError("Acción no válida")
     
+
+
+class testcase(unittest.TestCase):
+    
+    def prueba1(self):
+        self.assertEqual(gestionar_cadena("hola", "reversa"), "aloh")
+
+    def test_mayusculas(self):
+        self.assertEqual(gestionar_cadena("hola", "mayusculas"), "HOLA")
+    
+    def test_minusculas(self):
+        self.assertEqual(gestionar_cadena("HOLA", "minusculas"), "hola")
+
+    def test_longitud(self):
+        self.assertEqual(gestionar_cadena("hola", "longitud"), 4)
+
+    def test_accionnovalida(self):
+        with self.assertRaises(ValueError) as error:
+            gestionar_cadena("hola", "invalida")
+        self.assertEqual(str(error.exception), "Acción no válida")
+
+
+
+
+if __name__ == '__main__':
+    unittest.main()
+
+
+
