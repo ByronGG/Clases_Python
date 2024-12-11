@@ -22,19 +22,19 @@ def sumar(a: int, b: int) -> int:
     return a + b
 
 # Prueba unitaria usando unittest
-### class TestSumar(unittest.TestCase):
+class TestSumar(unittest.TestCase):
 
- #####   def test_sumar_positivos(self):
- ###       self.assertEqual(sumar(3, 5), 8)
+    def test_sumar_positivos(self):
+        self.assertEqual(sumar(3, 5), 8)
 
-  ###  def test_sumar_negativos(self):
- ###       self.assertEqual(sumar(-5, -3), -8)
+    def test_sumar_negativos(self):
+        self.assertEqual(sumar(-5, -3), -8)
 
- ###   def test_sumar_mixtos(self):
-  ###      self.assertEqual(sumar(-2, 5), 3)
+    def test_sumar_mixtos(self):
+        self.assertEqual(sumar(-2, 5), 3)
 
-# if __name__ == '__main__':
-#     unittest.main()
+if __name__ == '__main__':
+    unittest.main()
 
 """
 Escribe una función llamada gestionar_cadena que reciba una cadena de texto 
@@ -42,15 +42,15 @@ y un parámetro opcional accion. Según el valor de accion,
 la función debe realizar lo siguiente:
 
 "reversa": Devuelve la cadena al revés.
-Ejemplo: "hola" → "aloh".
+    Ejemplo: "hola" → "aloh".
 "mayusculas": Devuelve la cadena en mayúsculas.
-Ejemplo: "hola" → "HOLA".
+    Ejemplo: "hola" → "HOLA".
 "minusculas": Devuelve la cadena en minúsculas.
-Ejemplo: "HOLA" → "hola".
+    Ejemplo: "HOLA" → "hola".
 "longitud": Devuelve la longitud de la cadena.
-Ejemplo: "hola" → 4.
+    Ejemplo: "hola" → 4.
 Si accion no es válida o no se proporciona, 
-lanza una excepción con el mensaje: "Acción no válida".
+    lanza una excepción con el mensaje: "Acción no válida".
 """
 
 def gestionar_cadena(cadena, acccion=None):
@@ -86,11 +86,5 @@ class testcase(unittest.TestCase):
             gestionar_cadena("hola", "invalida")
         self.assertEqual(str(error.exception), "Acción no válida")
 
-
-
-
 if __name__ == '__main__':
     unittest.main()
-
-
-
