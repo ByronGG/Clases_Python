@@ -53,6 +53,7 @@ Si accion no es válida o no se proporciona,
     lanza una excepción con el mensaje: "Acción no válida".
 """
 
+
 def gestionar_cadena(cadena, acccion=None):
     if acccion == "reversa":
         return cadena[::-1]
