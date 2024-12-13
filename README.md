@@ -1,5 +1,31 @@
 # Clases_Python
- 
+
+## Clase 01 - Funciónes
+- Clase para entender las funciones de usuario, dentro funsion, built-in (Python)
+```Python
+# Funciones usuario
+def argViriables(*nombres):
+    for nombre in nombres:
+        print(f"Hola, {nombre}!")
+
+argViriables("Arturo", "Luis", "Lola")
+```
+- Variables locales y globales dentro de funsiones
+```Python
+# Variables Locales y Globales
+
+globalVar = "Arturo"
+
+def saludo():
+    localVar = "Hola"
+    print(f"{localVar}, {globalVar}")
+```
+
+## Clase 02 - Listas, Tuplas, Sets, Diccionarios
+Esta clase de estructa de datos casjadnajsndajnd
+
+
+
 ## Clase Tuplas
 
 ## 1. El uso de funciones y el llamarlas para ejecutar ciertos elementos como añadir, eliminar, insertar, buscar, salir
