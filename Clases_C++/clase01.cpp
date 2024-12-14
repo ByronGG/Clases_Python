@@ -87,8 +87,31 @@ using namespace std;
     }
 */
 
+namespace Geometry{
+    const double PI = 3.14159;
+
+    double areaCirculo(double radio){
+        return PI * radio * radio;
+    }
+}
 
 int main() {
-    cout << "Hola Mundo" << endl;
+    using namespace Geometry; // Usando el namespace Geomtry con directiva (using)
+    using namespace std;
+    const double radio = 5.0;
+
+    std::cout << "El area del circulo es: "<<areaCirculo(radio) <<std::endl;
+
+    // Tipos de datos básicos
+    char letra = 'A';
+    int edad = 18;
+    float salario = 292.99f;
+    double numero_largo = 1e10;
+    long double numero_preciso_largo = 3.1415926516716381684184L;
+
+    std::cout << "Letra es: " << letra <<", Edad: " << edad
+            <<", Salario: "<< salario << ", Numero grande: " << numero_largo
+            <<", numero presiso: " << numero_preciso_largo;
+
     return 0;
 }
