@@ -35,11 +35,11 @@
     }
 */
 
-/* Condiciones compuestas
+/* Condiciones compuestas o Operadores logicos (Computación booleana)
     --------------------------------------------------------------------------------------
-    && (AND): Todas las condiciones deben ser verdaderas.abort
-    || (OR): Al menos una condición debe ser verdadera.abort
-    ! (NOT): Niega una condición
+    && (AND): Todas las condiciones deben ser verdaderas.
+    || (OR): Al menos una condición debe ser verdadera.
+    ! (NOT): Niega una condición.
 */
 
 /* Operadores de compración
