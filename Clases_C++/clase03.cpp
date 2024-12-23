@@ -173,7 +173,7 @@ int main(){
     } while (opcion != 3);
 
 
-    cout << "-------------------------------------------------" <<endl;
+    cout << "--------------------FOR-----------------------------" <<endl;
 
     for(int i = 1; i <= 10; i++){ // Inicialización (i), condicion (i<=10), actualización(i++)
         cout<<"Iteracion: "<<i<<endl;
