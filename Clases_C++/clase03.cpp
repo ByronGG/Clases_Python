@@ -53,15 +53,50 @@
     - Acutalización: Se ejecuta al final de cada iteración para modificar la variable control.
 */
 
+/*  FOR-EACH
+    --------------------------------------------------------------------------------------
+    -tipo: Es el tipo de los elementos de la colección (por ejemplo, int, float, string, ect).
+    -elemento: Es una variable que representa el elemento actual de la colección.
+    -colección: Es la estrucutra que contiene los elementos a recorrer (arreglos o contenedor STL, vector o lista)
+
+    Sintaxis básica del FOR-EACH
+    for(tipo elemento: coleccion){
+        // Código que utiliza el ELEMENTO
+    }
+
+    VENTAJAS DEL FOR EACH
+    - Simplicidad: No necesitas preocuparte por índices o iteradores.
+    - Legibilidad: Hace el código más claro y consiso.
+    - Seguridad: Reduce la probabilidad de errores, como acceder fuera de los límites de un arreglo.
+    - Versatilidad: Funciona con cualquier contenedor compatible con iteradores (arreglos, vertor, set, maps, ect).
+
+    LIMITACIONES DEL FOR EACH
+    - No tiene acceso al índice de los elementos: Si necestias usuar los índices, debes recurrir al bucle for.
+    - No puedes modificar directamente elementos de la colección: Si necesitas modificar los valores en el contendor originar debes usar
+    una referencia.
+    - No es adecuado para estrucutras complejas sin iteradores.
+
+    CUANDO USAR FOR-EACH
+    - Cuando necesitas recorrer toda la coleecion sin preocuperate índice o iteradores.
+    - Cuando quieres un código más limpio y fácil de leer.
+    - Si no necesitas modificar los lementos directamente o, si necesitas hacerlo, puedes trabajr con referencias (int& o auto&)
+    - Para procesar contenedores de la STL (vector, map, set, etc)
+*/
+
 
 #include <iostream>
+#include <vector>
+#include <set>
+#include <map>
 using namespace std;
 
 int main(){
     //Variables
     int contador = 1; // Inicilización
+    int i = 1;
     int num;
     int a = 0;
+    
 
     while (contador <= 5){ // Condición
         cout <<"Numero: "<< contador <<endl;
@@ -175,6 +210,92 @@ int main(){
             cout << endl; // Salto de línea al final de cada fila
         }
 
+    cout << "--------------------FOR BREAK CONTINUE-----------------------------" <<endl;
+
+    for(int i = 1; i <= 10; i++){
+        if (i == 3){
+            cout<<"Buble interrumpido en i = "<<i <<endl;
+            break;
+        }
+        cout <<"Iteracion: "<<i<<endl;
+    }
+
+    for(int i = 1; i <= 10; i++){
+        if (i % 2 == 0){
+            continue;
+        }
+        cout <<"Numero impar "<<i<<endl;
+
+    cout << "-----------------------SIN INICIALIZACION--------------------------" <<endl;
+
+    for(; i <= 5; i ++){
+        cout<<"Iteracion: "<<i<<endl;
+    } 
+
+    cout << "----------------------SIN ACTUALIZACION---------------------------" <<endl;
+
+    for(int i = 1; i <= 5 ;){
+        cout<<"Iteracion: "<<i<<endl;
+        i++;
+    }
+
+    cout << "--------------------SIN CONDICION----------------------------" <<endl;
+
+    for(int i = 1 ;; i++){
+        if ( i > 5) break;
+        cout<<"Iteracion: "<<i<<endl;
+    }
+
+    // cout << "-------------------FOR INFINITO------------------------------" <<endl;
+    // for(;;){
+    //     cout<<"Esto es bucle infinito"<<endl;
+    // }
+
+    cout << "--------------------FOR-EACH-----------------------------" <<endl;
+
+    int arreglo_foreach[] = {10,20,30,40,50,60,70,80};
+
+    for(int decenas : arreglo_foreach){
+        cout<<"Numeros: "<<decenas<<endl;
+    }
+
+    vector<string> nombres = {"Arturo", "Luis", "Reyna", "Pepe", "Maria"};
+
+    for(string nombre: nombres){
+        cout <<nombre <<endl;
+    }
+
+    set<int> numeritos = {1, 5 ,10, 15, 22};
+
+    for(int numi: numeritos){
+        cout <<"Elementos: " <<numi<<endl;
+    }
+
+    map<string, int> edades = {
+        {"Arturo", 18},
+        {"Luis", 24},
+        {"Reyna", 23}
+    };
+
+    for(const auto& par : edades){
+        cout <<"Nombre: " <<par.first<< ", Edad: "<<par.second<<endl;
+    }
+
+    cout << "-------------------------------------------------" <<endl;
+
+    vector<int>numeros = {1,2,3,4};
+
+    // Modificar elemento usando referencia
+    for (int& num: numeros){
+        num *= 2; // Diplicar cada elemento
+    }
+
+    // Mostrar elementos modificados
+    for(int num : numeros){
+        cout<<num<<" ";
+    }
+
     return 0;
+    }
 }
 

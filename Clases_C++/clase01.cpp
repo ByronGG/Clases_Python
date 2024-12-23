@@ -40,7 +40,7 @@ using namespace std;
     --------------------------------------------------------------------------------------
     //Puntero de memoria CONST
     int a = 10, b = 20;
-    int *const ptr = &a; //Dirección fija.abort
+    int *const ptr = &a; //Dirección fija.
     ptr = &b; //Error.
 
     //Valor constatne al que apunte el puntero
