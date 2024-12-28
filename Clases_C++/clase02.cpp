@@ -55,7 +55,7 @@
 /* Operador ternario
     --------------------------------------------------------------------------------------
     El operador ternario en C++ es una forma compacta de escribir una condición simple
-    en una sola línea. Se utuiliza para evaluar una condición
+    en una sola línea. Se utiliza para evaluar una condición
 
     Sintaxis del operador ternario
     condición ? valor_verdadero : valor_falso;
