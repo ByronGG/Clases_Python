@@ -35,7 +35,7 @@
     Buenas practicas
     --------------------------------------------------------------------------------------------------------------------------
     - Mantener la funciones pequeñas y especificas
-    - usar nombres descriptivos
+    - Usar nombres descriptivos
     - Agrupar funciones relacionadas en clases o namespaces
     - Evitar efectos secundario: Las funciones deben modificar solo lo necesario
 */
