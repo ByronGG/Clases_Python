@@ -1,7 +1,7 @@
 /* VECTORES
     --------------------------------------------------------------------------------------
     Un vector es un contenedor dinámico en C++ que puede cambiar el tamaño automáticamente cuando se agregan o elimina elementos.
-    Los elementos del vector están almacenados de amenra contigua en memoria, lo que permite acceso aleateorio
+    Los elementos del vector están almacenados de manera contigua en memoria, lo que permite acceso aleateorio
     Se encuentra ene le encabezado <vector>
 
     - Crecimiento dinámico: Adiferencia de los arreglos estáticos, los vectores pueden cambiar de tamaño.
