@@ -1,3 +1,4 @@
+// Loan.h
 #ifndef LOAN_H
 #define LOAN_H
 
@@ -5,7 +6,7 @@
 
 class Loan {
 private:
-    int id;
+    int loanId;
     std::string type;
     int accountId;
     int customerId;
@@ -13,12 +14,9 @@ private:
 public:
     Loan(int id, const std::string& type, int accountId, int customerId);
 
-    int getId() const;
-    std::string getType() const;
-    int getAccountId() const;
+    void approveLoan();  // Declaración del método
     int getCustomerId() const;
-
-    void approveLoan();
+    std::string getType() const;
 };
 
 #endif

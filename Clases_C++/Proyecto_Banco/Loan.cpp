@@ -3,25 +3,19 @@
 
 // Constructor
 Loan::Loan(int id, const std::string& type, int accountId, int customerId)
-    : id(id), type(type), accountId(accountId), customerId(customerId) {}
+    : loanId(id), type(type), accountId(accountId), customerId(customerId) {}
 
-// Métodos
-int Loan::getId() const {
-    return id;
+// Implementación del método approveLoan
+void Loan::approveLoan() {
+    std::cout << "Loan ID " << loanId << " of type '" << type 
+              << "' for Customer ID " << customerId << " has been approved.\n";
 }
 
-std::string Loan::getType() const {
-    return type;
-}
-
-int Loan::getAccountId() const {
-    return accountId;
-}
-
+// Otros métodos
 int Loan::getCustomerId() const {
     return customerId;
 }
 
-void Loan::approveLoan() {
-    std::cout << "Loan approved for customer ID: " << customerId << "\n";
+std::string Loan::getType() const {
+    return type;
 }

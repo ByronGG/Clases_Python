@@ -1,22 +1,10 @@
+// Customer.cpp
 #include "Customer.h"
 
-// Constructor
-Customer::Customer(int id, const std::string& name, const std::string& address, int phoneNo)
-    : id(id), name(name), address(address), phoneNo(phoneNo) {}
+Customer::Customer(int id, const std::string& name, const std::string& address, const std::string& contact)
+    : id(id), name(name), address(address), contact(contact) {}
 
-// Métodos
-int Customer::getId() const {
-    return id;
-}
-
-std::string Customer::getName() const {
-    return name;
-}
-
-std::string Customer::getAddress() const {
-    return address;
-}
-
-int Customer::getPhoneNo() const {
-    return phoneNo;
-}
+int Customer::getId() const { return id; }
+std::string Customer::getName() const { return name; }
+std::string Customer::getAddress() const { return address; }
+std::string Customer::getContact() const { return contact; }
