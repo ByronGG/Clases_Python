@@ -3,11 +3,11 @@
 
 #include "Account.h"
 
-class Checking : public Account{
-    public:
-        Checking(int id, int customerId);
-        
-        void writeCheck();
+class Checking : public Account {
+public:
+    Checking(int id, int customerId);
+
+    void writeCheck();
 };
 
 #endif

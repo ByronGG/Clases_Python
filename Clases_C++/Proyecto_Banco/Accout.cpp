@@ -1,12 +1,14 @@
 #include "Account.h"
 
+// Constructor
 Account::Account(int id, int customerId)
-    : id(id), customerId(customerId){}
+    : id(id), customerId(customerId) {}
 
-int Account::getId() const{
+// Métodos
+int Account::getId() const {
     return id;
 }
 
-int Account::getCustomerId() const{
+int Account::getCustomerId() const {
     return customerId;
 }
