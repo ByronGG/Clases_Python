@@ -62,10 +62,33 @@
     archivo.read(reinterpret_cast<char*>(&numero), sizeof(numero));
     cout<<"niumero leido: "<<numero<<endl;
     archivo.close()
+
+    Método	Descripción	Clases
+    -------------------------------------------------------------------------------------------------------------------------
+    .open("ruta", modo)	        Abre un archivo con una ruta y un modo específico.	                ifstream, ofstream, fstream
+    .close()	                Cierra el archivo y libera recursos.	                            ifstream, ofstream, fstream
+    .is_open()	                Retorna true si el archivo está abierto correctamente.	            ifstream, ofstream, fstream
+    .write(char*, size)	        Escribe datos binarios en el archivo.	                            ofstream, fstream
+    .read(char*, size)	        Lee datos binarios del archivo.	                                    ifstream, fstream
+    .getline()	                Lee una línea completa de un archivo de texto.	                    ifstream, fstream
+    <<	                        Operador para escribir datos en el archivo (texto).	                ofstream, fstream
+    >>	                        Operador para leer datos del archivo (texto).	                    ifstream, fstream
+    .eof()	                    Retorna true si se ha alcanzado el final del archivo.	            ifstream, fstream
+    .good()	                    Verifica si el flujo está en buen estado.	                        ifstream, ofstream, fstream
+    .fail()	                    Verifica si el flujo falló en una operación.	                    ifstream, ofstream, fstream
+    .bad()	                    Verifica si hay un error grave (como pérdida de datos).	            ifstream, ofstream, fstream
+    .seekg(pos)	                Mueve el puntero de lectura a una posición específica.	            ifstream, fstream
+    .seekp(pos)	                Mueve el puntero de escritura a una posición específica.	        ofstream, fstream
+    .tellg()	                Retorna la posición actual del puntero de lectura.	                ifstream, fstream
+    .tellp()	                Retorna la posición actual del puntero de escritura.	            ofstream, fstream
+    .flush()	                Fuerza la escritura del buffer al archivo.	                        ofstream, fstream
+
 */
 
 #include <iostream>
 #include <fstream> // Libreria para trabajar con ficheros
+#include <map>
+#include <iomanip>
 
 using namespace std;
 
@@ -118,7 +141,80 @@ int main(){
         cerr<<"No se pudo crear el archivo binario"<<endl;
     }
 
-    
+    cout<<"------------------------------------CREAR & ESCRIBIR BINARIO---------------------------------------------------"<<endl;
+
+    // Abrir archivo en modo binario
+    ifstream archivoBinario_1("archivo_binario.bin", ios::in | ios::binary);
+
+    //verifuca si se abrio correctamente
+    if(archivoBinario_1.is_open()){
+        int numero;
+        double decimal;
+        char texto[30]; // Array para alamacenar la cadena de texto
+
+        // Leer los datos en el mismo orden que se escribieron
+        archivoBinario_1.read(reinterpret_cast<char*>(&numero), sizeof(numero)); // 110010000000000010000 -> 1638416
+        archivoBinario_1.read(reinterpret_cast<char*>(&decimal), sizeof(decimal));
+        archivoBinario_1.read(texto, sizeof(texto));
+
+        // Monstrar los datos leídos
+        cout<<"Datos leidos del archivo binario: "<<endl;
+        cout<<"Numero entero: "<<numero<<endl;
+        cout<<"Numero decimal: "<<decimal<<endl;
+        cout<<"Texto: "<<texto<<endl;
+
+        // Cerrar el archivo
+        archivoBinario_1.close();
+    } else{
+        cerr<<"No se pudo leer el archivo binario"<<endl;
+    }
+
+    cout<<"---------------------------------------LEER BINARIO---------------------------------------------------"<<endl;
+
+
+
+cout<<"---------------------------------------EJERCICIO---------------------------------------------------"<<endl;
+
+    ifstream archivo("vuelos.txt"); // Abrir el archivo de texto
+
+    // Verificar si se avrio el archivo
+    if(!archivo.is_open()){
+        cerr<<"Error: No se pudo abrir el archivo."<<endl;
+        return -1;
+    }
+
+    map<string, int> contador; // Mapa para contar las combinaciones
+    string puntero_linea; // <- linea (el que lee linea por linea)
+
+    // Leer lina por linea
+    while(getline(archivo, puntero_linea)){
+        if(puntero_linea.length() >= 2){ // Aseguira que la linea tenga al menos 2 caracteres
+            string dosLetras = puntero_linea.substr(0, 2); // Obtener las primeras dos letras de la linea
+            contador[dosLetras]++; // Incrementa el contador de una combinacion
+        }
+    }
+
+    archivo.close(); // Cerramos el archivo
+
+    // Calcular el promedio de ocurrencias
+    int totalCombinaciones = contador.size();
+    int totalOcurrencias = 0;
+
+    for(const auto &par : contador){
+        totalOcurrencias += par.second;
+    }
+
+    double promedio = totalCombinaciones > 0 ? static_cast<double>(totalOcurrencias) / totalCombinaciones : 0.0;
+
+    // Mostrar resultados
+    cout << "Combinaciones de la primera dos letras y sus ocurrencias: "<<endl;
+    cout<<"--------------------------------------------------------------"<<endl;
+    for(const auto &par: contador){
+        cout<<par.first<<": "<<par.second<<" veces."<<endl;
+    }
+
+    cout<<"--------------------------------------------------------------"<<endl;
+    cout<<"Promedio de ocurrencias por combinación de vuelo: "<<fixed<<setprecision(2)<<promedio<<endl;
 
     return 0;
 }

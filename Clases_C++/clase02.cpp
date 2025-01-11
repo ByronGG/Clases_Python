@@ -176,7 +176,7 @@ int main(){
     }
     */
 
-    // Usnaod operador ternario
+    // Usando operador ternario
     string resultado = (edad >= 18) ? "Eres mayor de edad." : "Eres menor de edad.";
     cout << resultado <<endl;
 

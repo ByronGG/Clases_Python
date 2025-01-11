@@ -219,8 +219,8 @@ int main() {
 
     std::map<int, std::string> mMap;
 
-    // Insertar pares clase-valor
-    mMap[1] = "Uno";
+    // Insertar pares clave-valor
+    mMap[1] = "Uno"; // <- auto <- variable para almacenar ambos valores(clave - valor) pair par <- nombre del map
     mMap[2] = "Dos";
     mMap[3] = "Tres";
     mMap[4] = "Cuatro";
