@@ -69,6 +69,7 @@ void insertionSort(std::vector<int>& arr){
 */
 
 int main(){
+    std::cout<<"Arreglo antes de ordenarlo: ";
     std::vector<int> arr = {8, 4, 6, 2, 9, 1, 5, 3, 0};
     printArray(arr);
 
