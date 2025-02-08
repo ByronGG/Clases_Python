@@ -39,7 +39,7 @@
 
 
 #include <iostream>
-using spacename std;
+using namespace std;
 
 int main(){
 
