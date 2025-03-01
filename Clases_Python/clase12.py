@@ -195,6 +195,6 @@ estudiantes = [
     {"nombre": "Elena", "calificacion": 50}
 ]
 
-resultado = ["AQUÍ VA EL CÓDIGO DE LA TAREA"]
+resultado = [f"{estudiantes['nombre']}: {'Aprobado' if estudiantes['calificacion'] >=70 else 'Reprobado'}" for estudiantes in estudiantes]
 
 print(resultado)
