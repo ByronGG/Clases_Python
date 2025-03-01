@@ -188,4 +188,3 @@ pares = [[num for num in sublista if num % 2 == 0] for sublista in lista]
 print(f"Lista filtrada por pares {pares}")
 
 print("--------------------------------------------------------------------------------------")
-
