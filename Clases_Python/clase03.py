@@ -12,6 +12,7 @@ print(str2 * 10)
 # Logintud
 print(len(str1))
 print("--------------------------------------------------------------------------------------")
+
 # Slicing
 #string[inicio:final:paso]
 print(str1[2:6])
