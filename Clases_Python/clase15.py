@@ -204,24 +204,48 @@ Objetivo: Generar datos sintéticos de temperaturas, analizarlos con NumPy y vis
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Generar datos
+
+# 1. Generar datos
+np.random.seed(42)
 dias = np.arange(1, 31)
-temperaturas = np.linspace(5, 35, 30) + np.random.normal(0, 3, 30)
+temperatura_base = np.linspace(5, 35, 30) # Aquí la oscilación de temperatura de 30 dias
+ruido = np.random.normal(0, 3, 30) # Ruido con distribución normal
+temperaturas = np.clip(temperatura_base + ruido, 5, 35)  # Limitamos entre 5 y 35
+
+# 2. Cálculo con NumPy
+promedio = np.mean(temperaturas)
+dias_calurosos = np.where(temperaturas > 25)[0]
+max_temp = np.max(temperaturas)
+min_temp = np.min(temperaturas)
+dia_max = dias[np.argmax(temperaturas)]
+dia_min = dias[np.argmin(temperaturas)]
+
+# 3. Visualización
+plt.figure(figsize=(12, 6))
+plt.plot(dias, temperaturas, 'b-', label="Tempratura diaria", linewidth=2)
+plt.plot(dia_max, max_temp, 'ro', markersize=10, label=f'Máximo: {max_temp:.1f}°C')
+plt.plot(dia_min, min_temp, 'go', markersize=10, label=f'Mínimo: {min_temp:.1f}°C')
+plt.axhline(promedio, color='black', linestyle='--', label=f'Promedio: {promedio:.1f}°C')
 
 
-# AQUI VA LA TAREA
+# 4. Tendendia polinómica
+coeficientes = np.polyfit(dias, temperaturas, 1)
+tendencia = np.polyval(coeficientes, dias)
+plt.plot(dias, tendencia, 'm--', label="Tendencia lineal")
 
-
-# GRAFICAS
-plt.figure(figsize=(10, 6))
-plt.plot() # AQUI VA LOS PARAMETROS (DIA DIARIO)
-plt.plot() # AQUI VA LOS PARAMETROS (MAX)
-plt.plot() # AQUI VA LOS PARAMETROS (MIN)
-plt.plot() # AQUI VA LOS PARAMETROS (PROMEDIO)
-plt.title("Temperaturas Diarias - Marzo 2025")
-plt.xlabel("Dias")
-plt.ylabel("Temperaturas (°C)")
-plt.grid(True)
+# 5. graficos
+plt.title("Análisis de Temperaturas - Enero 2025", fontsize=14)
+plt.xlabel("Diás del mes",fontsize=12)
+plt.ylabel("Temperatura (°C)", fontsize=12)
+plt.xticks(dias[::2])
+plt.grid(True, alpha=0.3)
+plt.legend(loc='upper left')
+plt.tight_layout()
 plt.show()
 
-# Imprimir resultados
+# Impresion
+print(f"Promedio mensual: {promedio:.2f}°C")
+print(f"Días con más de 25°C: {dias_calurosos + 1}")  # +1 porque los días empiezan en 1
+print(f"Temperatura máxima: {max_temp:.1f}°C (día {dia_max})")
+print(f"Temperatura mínima: {min_temp:.1f}°C (día {dia_min})")
+
