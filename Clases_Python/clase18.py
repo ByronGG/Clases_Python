@@ -162,6 +162,32 @@ print("----------------------------------------------------------------------")
         (abc) def-ghij (contiene letras)
         1234567890 (sin formato)
 """
+import re
+
+# funciones
+
+
+
+
+
+# Pruebas
+numeros_prueba = [
+    "(123) 456-7890",
+    "987-654-3210",
+    "555 123 4567",
+    "12-345-6789",
+    "(abc) def-ghij",
+    "1234567890"
+]
+
+# resultados
+
+
+
+
+
+
+
 
 """
 Ejercicio: Extraer Información de Logs de Servidor
