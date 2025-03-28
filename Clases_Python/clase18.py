@@ -163,3 +163,20 @@ print("----------------------------------------------------------------------")
         1234567890 (sin formato)
 """
 
+"""
+Ejercicio: Extraer Información de Logs de Servidor
+
+Escribe un script en Python que procese líneas de un log de servidor y extraiga:
+
+    Dirección IP del cliente.
+    Fecha y hora de la solicitud.
+    Método HTTP utilizado (ej: GET, POST, etc.).
+
+Formato del log (ejemplo):
+    192.168.1.1 - - [15/Sep/2023:14:23:45 +0200] "GET /index.html HTTP/1.1" 200 2326
+    10.0.0.2 - - [15/Sep/2023:14:24:01 +0200] "POST /api/login HTTP/1.1" 401 123
+
+Requerimientos:
+    Usa regex para capturar los componentes.
+    Ignora líneas que no coincidan con el formato.
+"""
