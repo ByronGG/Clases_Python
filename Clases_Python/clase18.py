@@ -165,10 +165,29 @@ print("----------------------------------------------------------------------")
 import re
 
 # funciones
+def validar_y_extraer_telefono(numero):
+    # Definir el patrón con grupo de captura
+    patron = r'^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$'
 
-
-
-
+    """
+    ^ -> Inicio de busqueda
+    \(? -> Paréntesis despues de apertura opcional(? inidica 0 o 1 repeticiones)
+    (\d{3}) -> Grupo 1: 3 digitos
+    \)? -> Parénteisis de cierre opcional
+    [- ]? -> Seperador opciones (guión o espacio)
+    (\d{3}) -> Grupo 2: 3 dígitos
+    [- ]? -> Seperador opciones (guión o espacio)
+    (\d{4}) -> Grupo 3: 4 dígitos
+    $ -> fin de busqueda
+    """
+    # Validar el formato
+    if re.match(patron, numero):
+        coincidencia = re.search(patron, numero)
+        codigo_area = coincidencia.group(1) # XXX | (XXX) | XXX
+        numero_principal = f"{coincidencia.group(2)}-{coincidencia.group(3)}" # XXX-XXXX | XXX XXXX 
+        return True, codigo_area, numero_principal # Check True -> XXX-XXX-XXXX | (XXX)-XXX-XXXX | XXX XXX XXXX
+    else:
+        return False, None, None # Check False -> None | None
 
 # Pruebas
 numeros_prueba = [
@@ -180,13 +199,14 @@ numeros_prueba = [
     "1234567890"
 ]
 
-# resultados
-
-
-
-
-
-
+for num in numeros_prueba:
+    valido, codigo, principal = validar_y_extraer_telefono(num)
+    print(f"Número: {num}")
+    print(f"Válido {num}")
+    if valido:
+        print(f"Código de área: {codigo}")
+        print(f"Número principal: {principal}")
+    print("-" * 30)
 
 
 """
@@ -206,3 +226,44 @@ Requerimientos:
     Usa regex para capturar los componentes.
     Ignora líneas que no coincidan con el formato.
 """
+
+import re
+def parsear_log(log_line):
+    # Patrón para extraer IP, fecha, método HTTP
+    patron = r'^(\S+) .* \[(.*?)\] "(\w+) .* HTTP/1\.\d"'
+    """
+    ^ -> Inicio de busqueda
+    (\S+) -> Capturar la IP (Primer grupo), asumiendo que es el primer elemento no-espacio (\S+)
+    .* \[(.*?)\] -> Ignorar elemento intermedio y captura la fecha/hora dentro del [ ]
+    "(\w+) -> Captura el método HTTP (GET, POST, DELETE, FETCH, ect...)
+    .* HTTP/1\.\d -> Ignora el resto de la solicitud hasta la versión HTTP
+    $ -> fin de busqueda
+    """
+    coincidencia = re.search(patron, log_line)
+
+    if coincidencia:
+        ip = coincidencia.group(1)
+        fecha_hora = coincidencia.group(2)
+        metodo_http = coincidencia.group(3)
+        return ip, fecha_hora, metodo_http
+    else:
+        return None
+    
+# Pruebas
+logs = [
+    '192.168.1.1 - - [15/Sep/2023:14:23:45 +0200] "GET /index.html HTTP/1.1" 200 2326',
+    '10.0.0.2 - - [15/Sep/2023:14:24:01 +0200] "POST /api/login HTTP/1.1" 401 123',
+    'INVALID_LINE [corrupta] "BAD_REQUEST"',
+    '172.16.0.5 - - [15/Sep/2023:14:25:10 +0200] "DELETE /api/user/123 HTTP/1.1" 204 0'
+]
+
+for log in logs:
+    resultado = parsear_log(log)
+    print(f"Línea: {log}")
+    if resultado:
+        print(f"IP: {resultado[0]}")
+        print(f"Fecha/Hora: {resultado[1]}")
+        print(f"Método HTTP: {resultado[2]}")
+    else:
+        print("Formato de Log Invalido")
+    print("-" * 50)
