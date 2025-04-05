@@ -3,6 +3,9 @@ import random
 import os
 import time
 
+#Importacion color
+from colorama import Fore, Back, Style
+
 def crear_tablero(tam):
     simbolos = list(range(1, (tam**2)//2 + 1)) * 2# Tamaño 4 -> (16)//2 + 1 -> 8 + 1 -> 9 [1,2,3,4,5,6,7,9] * 2 -> [1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9]
     random.shuffle(simbolos)
@@ -14,15 +17,16 @@ def crear_tablero(tam):
 
 def mostrar_tablero(tablero, reveladas):
     os.system('cls' if os.name == 'nt' else 'clear') # Limpieza Patanlla 
-    print("  " + " ".join(str(i+1).rjust(2) for i in range(len(tablero)))) # 4x4 -> 1 2 3 4
+    print(Fore.CYAN + "  " + " ".join(str(i+1).rjust(2) for i in range(len(tablero)))) # 4x4 -> 1 2 3 4
     print(" +" + "--" * len(tablero)) # -> --
     for i, fila in enumerate(tablero):
-        print(f"{i+1} |", end=" ") # -> |
+        print(Fore.CYAN + f"{i+1} |", end=" ") # -> |
         for j, valor in enumerate(fila):
             if reveladas[i][j]:
-                print(str(valor).rjust(2), end=" ")
+                color = Fore.GREEN if valor % 2 == 0 else Fore.YELLOW
+                print(color + str(valor).rjust(2), end=" ")
             else:
-                print(" X", end=" ")
+                print(Fore.WHITE + Back.BLUE + " X" + Style.RESET_ALL, end=" ")
         print()
 
 def obtener_coordenadas(tam):
