@@ -38,7 +38,7 @@ class TaskManager():
                 self.next_id = data["next_id"]
         else:
             self.guardar_tarea()
-    
+
     # Guardar tarea
     def guardar_tarea(self):
           with open(self.archivo, "w")as f: 
