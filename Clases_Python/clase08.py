@@ -5,7 +5,7 @@
 """
 MODOS
 * r = Read Lectura.
-* w = Write Escritura (Crear el archivo en caso de que no exista)
+* w = Write Escritura (Crea el archivo en caso de que no exista)
 * a = Appends Agregar (Añade contenido al final del archivo)
 * x = Exclusive Creation (Crea el arcivo "Da error si el archivo ya existe") 
 * b = Binary (Trabajar con archivos binarios (rb - wb))

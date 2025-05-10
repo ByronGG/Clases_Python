@@ -29,7 +29,23 @@ class TaskManager():
         self.status = {"Pendiente", "Proceso", "Completada"}
         self.cargar_tarea()
 
-    # usa metodos
+       # Cargar tarea
+    def cargar_tarea(self):
+        if os.path.exists(self.archivo):
+            with open(self.archivo, "r") as f:
+                data = json.load(f)
+                self.task = {int(k): v for k, v in data["task"].items()}
+                self.next_id = data["next_id"]
+        else:
+            self.guardar_tarea()
+    
+    # Guardar tarea
+    def guardar_tarea(self):
+          with open(self.archivo, "w")as f: 
+            json.dump({
+                "task": self.task,
+                "next_id": self.next_id,
+            }, f, indent=4)
 
     def add_task(self):
         # Agregar nueva tarea con el estado pendiente
@@ -98,24 +114,6 @@ class TaskManager():
                 print(f"\nID: {t['id']}\nTítulo: {t['titulo']}\nDescipción: {t['descripcion']}\nEstado: {t['estado']}")
             else:
                 print("No hay tareas para mostrar.")
-
-    # Cargar tarea
-    def cargar_tarea(self):
-        if os.path.exists(self.archivo):
-            with open(self.archivo, "r") as f:
-                data = json.load(f)
-                self.task = {int(k): v for k, v in data["task"].items()}
-                self.next_id = data["next_id"]
-        else:
-            self.guardar_tarea()
-    
-    # Guardar tarea
-    def guardar_tarea(self):
-          with open(self.archivo, "w")as f: 
-            json.dump({
-                "task": self.task,
-                "next_id": self.next_id,
-            }, f, indent=4)
 
 
 def menu():
