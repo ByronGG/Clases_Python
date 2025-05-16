@@ -1,0 +1,23 @@
+{
+    "task": {
+        "1": {
+            "id": 1,
+            "titulo": "Estudiar Matematicas",
+            "descripcion": "Estudiar para el examen",
+            "estado": "Proceso"
+        },
+        "2": {
+            "id": 2,
+            "titulo": "Jugar Fornite",
+            "descripcion": "Jugar despues del examen de mate",
+            "estado": "Pendiente"
+        },
+        "4": {
+            "id": 4,
+            "titulo": "Ir a Hy-teck",
+            "descripcion": "Chambiar",
+            "estado": "Completada"
+        }
+    },
+    "next_id": 5
+}
