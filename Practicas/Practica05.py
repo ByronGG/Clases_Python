@@ -28,3 +28,26 @@ Implementa validaciones de entrada para que:
 Cada operación CRUD debe confirmarse mostrando el resultado.
 El sistema debe permitir realizar varias operaciones hasta que el usuario decida salir.
 """
+
+import json
+import os
+
+def cargar_inventario():
+    if not os.path.exists("inventario.json"):
+        return []
+    with open("inventario.json", "r", encoding="utf-8") as f:
+        return json.load(f)
+    
+def guardar_inventario(invetario):
+    with open("inventario.json", "w", encoding="utf-8") as f:
+        json.dump(invetario, f, indent=2, ensure_ascii=False)
+
+#Validadr entrada de usario
+
+def input_opcion(texto, opciones):
+    while True:
+        valor = input(texto).strip()
+        if valor in opciones:
+            return valor 
+        else:
+            print("Opcion inválida. Opciones validas: ",opciones)
