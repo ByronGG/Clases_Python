@@ -137,6 +137,13 @@ def eliminar_producto(invetario):
     guardar_inventario(invetario)
     print("Producto eliminado con éxito")
 
+"""
+Pull Request para el Jr Arturo -> Arreglar el bug de leer_productos()
+    * La función debe mostrar primero la pregunta de filtrado de busqueda (linea 155)
+    * La opcion de omitir debe ser la iteración de todos los productos...(linea 152/153)
+    * IMPORTANTE! fixear el bug de filtrado de opciones!!!!!!!!!
+"""
+
 def leer_productos(inventario):
     print("\n--- Lista de productos ---")
     if not inventario:
