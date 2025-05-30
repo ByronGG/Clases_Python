@@ -230,13 +230,5 @@
     "categoria": "Laptop",
     "precio": 1499.0,
     "stock": 5
-  },
-  {
-    "id": 30,
-    "nombre": "Find X6",
-    "marca": "Oppo",
-    "categoria": "Celular",
-    "precio": 950.0,
-    "stock": 6
   }
 ]
