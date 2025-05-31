@@ -32,29 +32,34 @@ El sistema debe permitir realizar varias operaciones hasta que el usuario decida
 import json
 import os
 
+
 def cargar_inventario():
     if not os.path.exists("inventario.json"):
         return []
     with open("inventario.json", "r", encoding="utf-8") as f:
         return json.load(f)
-    
+
+
 def guardar_inventario(invetario):
     with open("inventario.json", "w", encoding="utf-8") as f:
         json.dump(invetario, f, indent=2, ensure_ascii=False)
 
-#Validar entrada de usario
+
+# Validar entrada de usario
 """
 Estas funciones validad cada entrada de datos: string no vacíos, opciones válidas, número flotate mayor que un mínimo,
 entero mayor que un minimo
 """
 
+
 def input_opcion(texto, opciones):
     while True:
         valor = input(texto).strip()
         if valor in opciones:
-            return valor 
+            return valor
         else:
-            print("Opcion inválida. Opciones validas: ",opciones)
+            print("Opcion inválida. Opciones validas: ", opciones)
+
 
 def input_no_vacio(texto):
     while True:
@@ -75,6 +80,7 @@ def input_float(texto, minimo=None):
         except ValueError:
             print("Debe ser un número")
 
+
 def input_int(texto, minimo=None):
     while True:
         try:
@@ -85,6 +91,7 @@ def input_int(texto, minimo=None):
                 return valor
         except ValueError:
             print("Debe ser un número")
+
 
 def crear_producto(inventario):
     print("\n--- Crear Producto ---")
@@ -104,10 +111,11 @@ def crear_producto(inventario):
         "marca": marca,
         "categoria": categoria,
         "precio": precio,
-        "stock": stock
+        "stock": stock,
     }
     inventario.append(producto)
     print("Producto agregado con éxito!")
+
 
 def buscar_por_id(invetario, id_producto):
     invetario_ordenado = sorted(invetario, key=lambda p: p["id"])
@@ -126,6 +134,7 @@ def buscar_por_id(invetario, id_producto):
             derecha = medio - 1
     return None
 
+
 def eliminar_producto(invetario):
     print("\n--- Eliminar prducto ---")
     id_prodcuto = input_int("Ingresa el ID del producto a eliminiar: ")
@@ -137,6 +146,7 @@ def eliminar_producto(invetario):
     guardar_inventario(invetario)
     print("Producto eliminado con éxito")
 
+
 """
 Pull Request para el Jr Arturo -> Arreglar el bug de leer_productos()
     * La función debe mostrar primero la pregunta de filtrado de busqueda (linea 155)
@@ -144,22 +154,23 @@ Pull Request para el Jr Arturo -> Arreglar el bug de leer_productos()
     * IMPORTANTE! fixear el bug de filtrado de opciones!!!!!!!!!
 """
 
+
 def leer_productos(inventario):
     print("\n--- Lista de productos ---")
     if not inventario:
         print("Inventario esta vácio")
         return
-    for producto in inventario:
-        print(producto)
 
     print("\n¿Deseas buscar por nombre, marca o categoría? (deja vacio para omitir) ")
     clave = input("Buscar: ").strip().lower()
+
     if clave:
         resultados = [
-            p for p in inventario if
-            clave in p["nombre"].lower() or
-            clave in p["marca"].lower() or
-            clave in p["categoria"].lower()
+            p
+            for p in inventario
+            if clave in p["nombre"].lower()
+            or clave in p["marca"].lower()
+            or clave in p["categoria"].lower()
         ]
         if resultados:
             print(f"\nResultados de búsqueda para '{clave}': ")
@@ -167,6 +178,11 @@ def leer_productos(inventario):
                 print(p)
             else:
                 print("No se enocntraron coincidencias.")
+    else:
+        print("\nTodos los productos en invetario: ")
+        for producto in inventario:
+            print(producto)
+
 
 def actualizar_producto(invetario):
     print("\n--- Actualizar producto ---")
@@ -175,7 +191,7 @@ def actualizar_producto(invetario):
     if not producto:
         print("Producto no encontrado.")
         return
-    
+
     print("Deja en blaco si no quieres camibar el valor.")
     nombre = input(f"Nombre [{producto['nombre']}]: ").strip()
     marca = input(f"Marca [{producto['marca']}]: ").strip()
@@ -211,6 +227,7 @@ def actualizar_producto(invetario):
     guardar_inventario(invetario)
     print("Producto actualizado.")
 
+
 def menu():
     inventario = cargar_inventario()
     while True:
@@ -234,6 +251,7 @@ def menu():
         elif opcion == "5":
             print("¡Hasta luego!")
             break
+
 
 if __name__ == "__main__":
     menu()

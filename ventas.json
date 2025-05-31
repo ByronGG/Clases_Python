@@ -1,0 +1,82 @@
+[
+    {
+        "id_venta": 1,
+        "fecha": "2024-05-20",
+        "producto": "Teclado",
+        "cantidad": 2,
+        "precio_unitario": 150.0,
+        "cliente": "Carlos"
+    },
+    {
+        "id_venta": 2,
+        "fecha": "2024-05-20",
+        "producto": "Mouse",
+        "cantidad": 1,
+        "precio_unitario": 80.0,
+        "cliente": "Ana"
+    },
+    {
+        "id_venta": 3,
+        "fecha": "2024-05-21",
+        "producto": "Monitor",
+        "cantidad": 1,
+        "precio_unitario": 1800.0,
+        "cliente": "Carlos"
+    },
+    {
+        "id_venta": 4,
+        "fecha": "2024-05-22",
+        "producto": "Teclado",
+        "cantidad": 1,
+        "precio_unitario": 150.0,
+        "cliente": "Juan"
+    },
+    {
+        "id_venta": 5,
+        "fecha": "2024-05-22",
+        "producto": "Mouse",
+        "cantidad": 2,
+        "precio_unitario": 80.0,
+        "cliente": "Ana"
+    },
+    {
+        "id_venta": 6,
+        "fecha": "2024-05-23",
+        "producto": "Monitor",
+        "cantidad": 1,
+        "precio_unitario": 1800.0,
+        "cliente": "Luis"
+    },
+    {
+        "id_venta": 7,
+        "fecha": "2024-05-24",
+        "producto": "Teclado",
+        "cantidad": 1,
+        "precio_unitario": 150.0,
+        "cliente": "Carlos"
+    },
+    {
+        "id_venta": 8,
+        "fecha": "2024-05-24",
+        "producto": "Mouse",
+        "cantidad": 1,
+        "precio_unitario": 80.0,
+        "cliente": "Juan"
+    },
+    {
+        "id_venta": 9,
+        "fecha": "2024-05-25",
+        "producto": "Teclado",
+        "cantidad": 1,
+        "precio_unitario": 150.0,
+        "cliente": "Ana"
+    },
+    {
+        "id_venta": 10,
+        "fecha": "2024-05-25",
+        "producto": "Monitor",
+        "cantidad": 1,
+        "precio_unitario": 1800.0,
+        "cliente": "Luis"
+    }
+]
