@@ -26,6 +26,7 @@ Requisitos:
 """
 
 import json
+from collections import defaultdict, Counter
 
 def cargar_ventas():
     try:
@@ -36,16 +37,47 @@ def cargar_ventas():
         return []
 
 def total_ventas_por_dia(ventas):
-    pass
+    totales = defaultdict(float)
+    for venta in ventas:
+        fecha_por_dia = venta["fecha"]
+        total_venta = venta["cantidad"] * venta["precio_unitario"]
+        totales[fecha_por_dia] += total_venta
+    
+    print("\nTotal de ventas por día: ")
+    print("{:<12} {:>12}".format("Fecha", "Total ($)"))
+    print("-" * 25)
+    for fecha, total, in sorted(totales.items()):
+        print("{:<12} {:>12.2f}".format(fecha, total))
+    
 
 def producto_mas_vendido(ventas):
-    pass
+    conteo = Counter()
+    for venta in ventas:
+        producto = venta["producto"]
+        conteo[producto] += venta["cantidad"]
+
+    if conteo:
+        producto, cantidad = conteo.most_common(1)[0]
+        print(f"\nProducto más vendido: {producto} ({cantidad} unidades)")
+    else:
+        print("No hay ventas registradas.")
 
 def clientes_frecuentes(ventas):
     pass
 
 def buscar_ventas_por_fecha(ventas):
-    pass
+    fecha = input("Ingrese la fecha a buscar (YYYY-MM-DD): ").strip()
+    encontrados = [v for v in ventas if v["fecha"] == fecha]
+    if encontrados:
+        print(f"\nVentas de día {fecha}: ")
+        print("{:<5} {:<10} {:<10} {:<8} {:<8} {:<11}".format("ID", "Productos", "Cliente", "Cant.", "P. Unitario", "Total"))
+        print("-" * 55)
+        for v in encontrados:
+            total = v["cantidad"] * v["precio_unitario"]
+            print("{:<5} {:<10} {:<10} {:<8} {:<8.2f} {:<13.2f}".format(v["id_venta"], v["producto"], v["cliente"], v["cantidad"], v["precio_unitario"], total))
+    else:
+        print("\nNo hay ventas registradas para esa fecha")
+    
 
 def menu():
     ventas = cargar_ventas()

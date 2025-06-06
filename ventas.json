@@ -1,82 +1,322 @@
 [
     {
         "id_venta": 1,
-        "fecha": "2024-05-20",
-        "producto": "Teclado",
-        "cantidad": 2,
-        "precio_unitario": 150.0,
-        "cliente": "Carlos"
+        "fecha": "2024-06-21",
+        "producto": "Webcam",
+        "cantidad": 1,
+        "precio_unitario": 650.0,
+        "cliente": "Diego"
     },
     {
         "id_venta": 2,
-        "fecha": "2024-05-20",
-        "producto": "Mouse",
+        "fecha": "2024-06-24",
+        "producto": "Impresora",
         "cantidad": 1,
-        "precio_unitario": 80.0,
-        "cliente": "Ana"
+        "precio_unitario": 2200.0,
+        "cliente": "Sofía"
     },
     {
         "id_venta": 3,
-        "fecha": "2024-05-21",
-        "producto": "Monitor",
+        "fecha": "2024-06-25",
+        "producto": "Laptop",
         "cantidad": 1,
-        "precio_unitario": 1800.0,
-        "cliente": "Carlos"
+        "precio_unitario": 12500.0,
+        "cliente": "Camila"
     },
     {
         "id_venta": 4,
-        "fecha": "2024-05-22",
-        "producto": "Teclado",
-        "cantidad": 1,
-        "precio_unitario": 150.0,
-        "cliente": "Juan"
+        "fecha": "2024-06-23",
+        "producto": "Bocinas",
+        "cantidad": 2,
+        "precio_unitario": 1200.0,
+        "cliente": "Camila"
     },
     {
         "id_venta": 5,
-        "fecha": "2024-05-22",
-        "producto": "Mouse",
-        "cantidad": 2,
-        "precio_unitario": 80.0,
-        "cliente": "Ana"
+        "fecha": "2024-06-15",
+        "producto": "Impresora",
+        "cantidad": 1,
+        "precio_unitario": 2200.0,
+        "cliente": "Sofía"
     },
     {
         "id_venta": 6,
-        "fecha": "2024-05-23",
-        "producto": "Monitor",
-        "cantidad": 1,
-        "precio_unitario": 1800.0,
-        "cliente": "Luis"
+        "fecha": "2024-06-10",
+        "producto": "Laptop",
+        "cantidad": 2,
+        "precio_unitario": 12500.0,
+        "cliente": "Sofía"
     },
     {
         "id_venta": 7,
-        "fecha": "2024-05-24",
-        "producto": "Teclado",
+        "fecha": "2024-06-17",
+        "producto": "Bocinas",
         "cantidad": 1,
-        "precio_unitario": 150.0,
-        "cliente": "Carlos"
+        "precio_unitario": 1200.0,
+        "cliente": "Diego"
     },
     {
         "id_venta": 8,
-        "fecha": "2024-05-24",
-        "producto": "Mouse",
+        "fecha": "2024-06-18",
+        "producto": "Bocinas",
         "cantidad": 1,
-        "precio_unitario": 80.0,
-        "cliente": "Juan"
+        "precio_unitario": 1200.0,
+        "cliente": "Mateo"
     },
     {
         "id_venta": 9,
-        "fecha": "2024-05-25",
-        "producto": "Teclado",
-        "cantidad": 1,
-        "precio_unitario": 150.0,
-        "cliente": "Ana"
+        "fecha": "2024-06-14",
+        "producto": "Tablet",
+        "cantidad": 2,
+        "precio_unitario": 3500.0,
+        "cliente": "Diego"
     },
     {
         "id_venta": 10,
-        "fecha": "2024-05-25",
-        "producto": "Monitor",
+        "fecha": "2024-06-24",
+        "producto": "Bocinas",
         "cantidad": 1,
-        "precio_unitario": 1800.0,
-        "cliente": "Luis"
+        "precio_unitario": 1200.0,
+        "cliente": "Mateo"
+    },
+    {
+        "id_venta": 11,
+        "fecha": "2024-06-13",
+        "producto": "Tablet",
+        "cantidad": 3,
+        "precio_unitario": 3500.0,
+        "cliente": "Diego"
+    },
+    {
+        "id_venta": 12,
+        "fecha": "2024-06-13",
+        "producto": "Bocinas",
+        "cantidad": 3,
+        "precio_unitario": 1200.0,
+        "cliente": "Camila"
+    },
+    {
+        "id_venta": 13,
+        "fecha": "2024-06-20",
+        "producto": "Laptop",
+        "cantidad": 3,
+        "precio_unitario": 12500.0,
+        "cliente": "Diego"
+    },
+    {
+        "id_venta": 14,
+        "fecha": "2024-06-21",
+        "producto": "Laptop",
+        "cantidad": 3,
+        "precio_unitario": 12500.0,
+        "cliente": "Valeria"
+    },
+    {
+        "id_venta": 15,
+        "fecha": "2024-06-14",
+        "producto": "Tablet",
+        "cantidad": 1,
+        "precio_unitario": 3500.0,
+        "cliente": "Camila"
+    },
+    {
+        "id_venta": 16,
+        "fecha": "2024-06-25",
+        "producto": "Bocinas",
+        "cantidad": 2,
+        "precio_unitario": 1200.0,
+        "cliente": "Valeria"
+    },
+    {
+        "id_venta": 17,
+        "fecha": "2024-06-12",
+        "producto": "Webcam",
+        "cantidad": 3,
+        "precio_unitario": 650.0,
+        "cliente": "Mateo"
+    },
+    {
+        "id_venta": 18,
+        "fecha": "2024-06-11",
+        "producto": "Laptop",
+        "cantidad": 3,
+        "precio_unitario": 12500.0,
+        "cliente": "Mateo"
+    },
+    {
+        "id_venta": 19,
+        "fecha": "2024-06-15",
+        "producto": "Impresora",
+        "cantidad": 2,
+        "precio_unitario": 2200.0,
+        "cliente": "Valeria"
+    },
+    {
+        "id_venta": 20,
+        "fecha": "2024-06-23",
+        "producto": "Tablet",
+        "cantidad": 3,
+        "precio_unitario": 3500.0,
+        "cliente": "Fernanda"
+    },
+    {
+        "id_venta": 21,
+        "fecha": "2024-06-15",
+        "producto": "Impresora",
+        "cantidad": 3,
+        "precio_unitario": 2200.0,
+        "cliente": "Sofía"
+    },
+    {
+        "id_venta": 22,
+        "fecha": "2024-06-14",
+        "producto": "Bocinas",
+        "cantidad": 1,
+        "precio_unitario": 1200.0,
+        "cliente": "Sofía"
+    },
+    {
+        "id_venta": 23,
+        "fecha": "2024-06-12",
+        "producto": "Bocinas",
+        "cantidad": 1,
+        "precio_unitario": 1200.0,
+        "cliente": "Fernanda"
+    },
+    {
+        "id_venta": 24,
+        "fecha": "2024-06-25",
+        "producto": "Tablet",
+        "cantidad": 2,
+        "precio_unitario": 3500.0,
+        "cliente": "Diego"
+    },
+    {
+        "id_venta": 25,
+        "fecha": "2024-06-19",
+        "producto": "Bocinas",
+        "cantidad": 1,
+        "precio_unitario": 1200.0,
+        "cliente": "Fernanda"
+    },
+    {
+        "id_venta": 26,
+        "fecha": "2024-06-14",
+        "producto": "Webcam",
+        "cantidad": 1,
+        "precio_unitario": 650.0,
+        "cliente": "Diego"
+    },
+    {
+        "id_venta": 27,
+        "fecha": "2024-06-24",
+        "producto": "Laptop",
+        "cantidad": 2,
+        "precio_unitario": 12500.0,
+        "cliente": "Fernanda"
+    },
+    {
+        "id_venta": 28,
+        "fecha": "2024-06-12",
+        "producto": "Impresora",
+        "cantidad": 3,
+        "precio_unitario": 2200.0,
+        "cliente": "Valeria"
+    },
+    {
+        "id_venta": 29,
+        "fecha": "2024-06-20",
+        "producto": "Impresora",
+        "cantidad": 3,
+        "precio_unitario": 2200.0,
+        "cliente": "Mateo"
+    },
+    {
+        "id_venta": 30,
+        "fecha": "2024-06-25",
+        "producto": "Impresora",
+        "cantidad": 2,
+        "precio_unitario": 2200.0,
+        "cliente": "Valeria"
+    },
+    {
+        "id_venta": 31,
+        "fecha": "2024-06-19",
+        "producto": "Bocinas",
+        "cantidad": 2,
+        "precio_unitario": 1200.0,
+        "cliente": "Valeria"
+    },
+    {
+        "id_venta": 32,
+        "fecha": "2024-06-23",
+        "producto": "Bocinas",
+        "cantidad": 1,
+        "precio_unitario": 1200.0,
+        "cliente": "Diego"
+    },
+    {
+        "id_venta": 33,
+        "fecha": "2024-06-14",
+        "producto": "Bocinas",
+        "cantidad": 3,
+        "precio_unitario": 1200.0,
+        "cliente": "Fernanda"
+    },
+    {
+        "id_venta": 34,
+        "fecha": "2024-06-13",
+        "producto": "Webcam",
+        "cantidad": 3,
+        "precio_unitario": 650.0,
+        "cliente": "Sofía"
+    },
+    {
+        "id_venta": 35,
+        "fecha": "2024-06-24",
+        "producto": "Webcam",
+        "cantidad": 1,
+        "precio_unitario": 650.0,
+        "cliente": "Diego"
+    },
+    {
+        "id_venta": 36,
+        "fecha": "2024-06-23",
+        "producto": "Webcam",
+        "cantidad": 2,
+        "precio_unitario": 650.0,
+        "cliente": "Sofía"
+    },
+    {
+        "id_venta": 37,
+        "fecha": "2024-06-14",
+        "producto": "Laptop",
+        "cantidad": 3,
+        "precio_unitario": 12500.0,
+        "cliente": "Camila"
+    },
+    {
+        "id_venta": 38,
+        "fecha": "2024-06-10",
+        "producto": "Bocinas",
+        "cantidad": 1,
+        "precio_unitario": 1200.0,
+        "cliente": "Diego"
+    },
+    {
+        "id_venta": 39,
+        "fecha": "2024-06-11",
+        "producto": "Webcam",
+        "cantidad": 1,
+        "precio_unitario": 650.0,
+        "cliente": "Sofía"
+    },
+    {
+        "id_venta": 40,
+        "fecha": "2024-06-19",
+        "producto": "Tablet",
+        "cantidad": 3,
+        "precio_unitario": 3500.0,
+        "cliente": "Diego"
     }
 ]
