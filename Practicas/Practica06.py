@@ -12,7 +12,7 @@ Tu tarea es crear un programa de análisis con un menú de opciones que permita:
 
     1- Calcular y mostrar el total de ventas ($) por día.
     2- Mostrar el producto más vendido de la semana.
-    3- Mostrar la lista de clientes frecuentes (más de 2 compras en la semana).
+    3- Mostrar la lista de clientes frecuentes (más de 5 compras en la semana).
     4- Buscar y mostrar todas las ventas de un día específico (por fecha ingresada).
     5- Salir del programa.
 
