@@ -63,7 +63,21 @@ def producto_mas_vendido(ventas):
         print("No hay ventas registradas.")
 
 def clientes_frecuentes(ventas):
-    pass
+    conteo_clientes = Counter()
+    for venta in ventas:
+        cliente = venta["cliente"]
+        conteo_clientes[cliente] += 1
+        frecuentes = [cliente for cliente, veces in conteo_clientes.items() if veces > 5]
+    # se itera en los frecuentes
+    if frecuentes:
+        print("Clientes frecuentes: ")
+        print("-" * 26)
+        for cliente in frecuentes:
+            print("-", cliente)
+        print("-" * 26)
+    else:
+        print("No hay mas clientes")
+
 
 def buscar_ventas_por_fecha(ventas):
     fecha = input("Ingrese la fecha a buscar (YYYY-MM-DD): ").strip()
