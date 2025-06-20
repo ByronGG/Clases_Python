@@ -1,0 +1,7 @@
+[
+    {"nombre": "CPU", "costo": 200},
+    {"nombre": "RAM", "costo": 80},
+    {"nombre": "Motherboard", "costo": 120},
+    {"nombre": "Disco Duro", "costo": 100},
+    {"nombre": "PC", "costo": null}
+]

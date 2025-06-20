@@ -1,0 +1,7 @@
+[
+    ["PC", "CPU"],
+    ["PC", "RAM"],
+    ["PC", "Motherboard"],
+    ["Motherboard", "RAM"],
+    ["Motherboard", "Disco Duro"]
+]
