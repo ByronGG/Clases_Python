@@ -171,3 +171,4 @@ if __name__ == "__main__":
             Cada vez que un usuario elija una palabra de las sugerencias, incrementa la frecuencia de esa palabra.
             Muestra cómo con el tiempo las más buscadas suben en el ranking.
 """
+
