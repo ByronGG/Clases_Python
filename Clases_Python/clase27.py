@@ -172,3 +172,111 @@ if __name__ == "__main__":
             Muestra cómo con el tiempo las más buscadas suben en el ranking.
 """
 
+
+## Tarea completa:
+
+
+class TrieNode():
+    def __init__(self):
+        self.children = {}
+        self.is_end = False
+        self.frequency = 0
+
+
+class Trie():
+    def __init__(self):
+        self.root = TrieNode()
+
+
+
+    def insert(self, word):
+        node = self.root
+
+        for char in word.lower():
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+        node.is_end = True
+
+
+
+    def search(self, word, node, prefix, resultados):
+
+        node = self.root
+
+        for char, child in node.children.items():
+            if char not in node.children:
+                return False
+            node = node.children[char]
+        return node.is_end
+
+
+    def primerabusqueda(self, node, prefix, resultados):
+        if node.is_end:
+            resultados.append((prefix, node.frequency))
+
+        for char, child in node.children.items():
+            self.primerabusqueda(child, prefix + char, resultados)
+
+
+
+    def autocomplete(self, prefix):
+        node = self.root
+        prefix = prefix.lower()
+
+
+        for char in prefix:
+            if char not in node.children:
+                return []
+            node = node.children[char]
+
+
+        resultados = []
+        self.primerabusqueda(node, prefix, resultados)
+
+        resultados.sort()
+
+
+        return [word for word, frequency in resultados]
+
+
+
+    def frequency(self, word):
+        node = self.root
+        for char in word.lower():
+            if char not in node.children:
+                return False
+            node = node.children[char]
+
+
+        if node.is_end:
+            node.frequency += 1
+
+
+trie = Trie()
+
+
+palabras = ["casa", "carta", "carton", "perro", "personal", "vecinal"]
+for palabra in palabras:
+    trie.insert(palabra)
+
+print("Buscar 'car':")
+sugerencias = trie.autocomplete("car")
+print("Sugerencias:", sugerencias)
+
+
+print("Simulando que el usuario usa estas palabras")
+trie.frequency("carro")
+trie.frequency("carro")
+trie.frequency("carro")
+trie.frequency("carta")
+print("La palabra carro usado 3 veces")
+print("La palabra carta fue usada 1 vez")
+
+
+print()
+
+print("Buscar car despues del uso:")
+sugerencias = trie.autocomplete("car")
+print("Sugerencias provistas de mayor a menor popularidad:", sugerencias)
+print("carro es la mas popular")
