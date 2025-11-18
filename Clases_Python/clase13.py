@@ -1,7 +1,7 @@
 """
 Metodos asincronos Python
 
-La programación asíncrona en Pythonpermite ejecutar múltiples tareas simultáneamente. Esto es útil cuando trabajanmos con operaciones de entrada o salida (I/O) como solicitudes HTTP, lectura escritura en archivos o conexiones a bases de datos, ya que evita que el programa se quede "esperando" mientras se complemetan estas operaciones.
+La programación asíncrona en Python permite ejecutar múltiples tareas simultáneamente. Esto es útil cuando trabajanmos con operaciones de entrada o salida (I/O) como solicitudes HTTP, lectura escritura en archivos o conexiones a bases de datos, ya que evita que el programa se quede "esperando" mientras se complemetan estas operaciones.
 
 Diferencias entre programación sincrónas y asíncrona
 
