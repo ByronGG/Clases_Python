@@ -19,7 +19,7 @@
     Imagia que tu dataset sea un pastel. En vez de quitar una sola rebanada para probar...
     Cortas el pastel en varias rebnanadas y:
         * Cada rebanada se usa una vez como test
-        * Lada demás se usan como train
+        * Las demás se usan como train
     
     K-Fold Cross-Validation
     ¿Cómo funciona un K-Fold?
@@ -47,7 +47,7 @@
     Ejemplo:
     Supón estos accuracies:
     [0.81, 0.79, 0.83, 0.80, 0.78]
-    Resulto CV:
+    Resuelto CV:
     mean = 0.802
     std = 0.017
 
@@ -79,7 +79,7 @@
 
     scores = cross_val_score(pipe, X, y, cv=5)
 
-    Cada fold aprender su propio "sclaer"
+    Cada fold aprende su propio "sclaer"
     No hay fuga de datos!
 ---------------------------------TEORIA------------------------------------------------
 
@@ -119,8 +119,19 @@ df = pd.DataFrame({
     "y": [0,0,0,0,1,1,1,1,1,1]
 })
 
+# --------------------
+# Solución de la tarea
+# --------------------
+
 X = df[["X"]]
-y = df[["y"]]
+# y = df[["y"]]
+y = df["y"] # scikit-learn espera que y sea un vector 1D, no una tabla.
+# y = df[["y"]].values.ravel() # Casteo de valores a tabla
+
+"""
+X :  1  2  3  4  |  5  6  7  8  9  10
+y :  0  0  0  0  |  1  1  1  1  1  1
+"""
 
 from sklearn.model_selection import KFold
 from sklearn.linear_model import LogisticRegression
