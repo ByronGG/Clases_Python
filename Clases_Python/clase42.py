@@ -95,3 +95,58 @@ class CNN(nn.Module):
 # 3) Configurar Entrenamiento
 # ==================================
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print(f"Usando: {device}")
+
+model = CNN().to(device)
+criterion = nn.CrossEntropyLoss() #Pérdida para clasificaciónes multiclase
+optimizer = optim.Adam(model. parameters(), lr=0.001)
+
+# ==================================
+# 4) Entrenar Modelo
+# ==================================
+
+def train(model, loader, optimizer, criterion, epochs=5):
+    model.train()
+    for epoch in range(epochs):
+        total_loss = 0
+        correct = 0
+
+        for images, labels in loader:
+            images, labels = images.to(device), labels.to(device)
+
+            optimizer.zero_grad() # Limpia gradientes anteriores
+            outputs = model(images) # Forward pass
+            loss = criterion(outputs, labels) #Calcula pérdida
+            loss.backward() #backprogations
+            optimizer.step() #Actualiza pasos
+
+            total_loss += loss.item()
+            correct += (outputs.argmax(1) == labels).sum().item()
+
+        accuracy = correct / len(loader.dataset) * 100
+        print(f"Época {epoch+1} / {epochs} | Pérdida: {total_loss/len(loader):.4f} | Precisión: {accuracy:.2f}%")
+
+# ==================================
+# 5) Evaluar el modelo
+# ==================================
+
+def evaluate(model, loader):
+    model.eval()
+    correct = 0
+
+    with torch.no_grad(): #No necesitamos calcular gradiantes al evaluar
+        for images, labels in loader:
+            images, labels = images.to(device), labels.to(device)
+            outputs = model(images)
+            correct += (outputs.argmax(1) == labels).sum().item()
+
+    accuracy = correct / len(loader.dataset) * 100
+    print(f"\nPrecision en test: {accuracy:.2f}%")
+
+# ==================================
+# 6) Ejecutar
+# ==================================
+
+train(model, train_loader, optimizer, criterion, epochs=5)
+evaluate(model, test_loader)
