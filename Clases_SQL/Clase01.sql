@@ -4,7 +4,7 @@
 -- Las 5 categorías de SQL!!
 -- DDL (Data Definitaion Language): Define la estructura de tu base de datos. Son los comandos con los que creas tablas, las modificas o las elminias. Escruir tablas o estructuras relacionadas (tablas vacias)
 -- DML (Data Manipulation Language): Manipulas los datos dentros esas estructuras. Con el insetar registro nuevos, actulizar los existentes o eliminar
--- DQL (Data Query Language): CUltas y recupera información. El comando SELECT es más usando en todo SQL; con él haces preguntras a la base de datos
+-- DQL (Data Query Language): Cultas y recupera información. El comando SELECT es más usando en todo SQL; con él haces preguntras a la base de datos
 -- DCL (Data Control Language): Control QUIÉN puede hacer QUÉ. Con GRANT das permisos y con REVOKE los quitas.
 -- TCL (Transaction Control Language): Gestionas las trancacciones, que son grupos de operaciones que deben ejecutarse juntas o no ejecutarse del todo. Por ejemplo, en una transferencia bancaria: descontar dinero de un cuenta y agregarlo a otra deben ocurrir juntas; sin que una falla, ambas deben revertirse.
 
