@@ -73,3 +73,69 @@ CREATE TABLE clientes(
     nombre VARCHAR(100) NOT NULL,
     edad INT CHECK (edad >= 18)
 );
+
+/*
+    Escebnario: Sistema de Ventas 
+    - Clientes
+    - Productos
+    - Órdenes
+
+    Objetivo trbajar con DML
+*/
+
+CREATE TABLE clientes(
+    id INT PRIMARY KEY,
+    nombre VARCHAR(100),
+    cuidad VARCHAR(100)
+);
+
+CREATE TABLE productos(
+    id INT PRIMARY KEY,
+    nombre VARCHAR(100),
+    precio DECIMAL(10,2)
+);
+
+CREATE TABLE ordenes(
+    id INT PRIMARY KEY,
+    cliente_id INT,
+    producto_id INT,
+    cantidad INT,
+    fecha DATE,
+    FOREIGN KEY(cliente_id) REFERENCES clientes(id),
+    FOREIGN KEY(producto_id) REFERENCES productos(id),
+);
+
+-- EJERCICIO DE ARTURO
+/* 
+Luis - Cuidad de Mexico
+Ana - Monterrey
+Pedro -  Guadalajara
+Lucia Cuidad Mexico
+
+Laptop 15000.00
+Mouse 300.00
+Teclado 800.00
+
+Orden 1 - Luis compro una laptop lo compro ayer
+Orden 2 - Ana compro dos mouse lo compro hace 3 dias
+Orden 3 - Luis compro un teclado
+Orden 4 - Lucia compro un teclado 
+*/
+
+INSERT INTO clientes(id, nombre, cuidad) VALUES
+(1, "Luis", "CDMX"),
+(2, "Ana", "MTY"),
+(3, "Pedro", "GDL"),
+(4, "Lucia", "CDMX");
+
+INSERT INTO productos(id, nombre, precio) VALUES
+(1, "Laptop", 15000.00),
+(2, "Mouse", 300.00),
+(3, "Teclado", 800.00);
+
+
+INSERT INTO ordenes(id, cliente_id, producto_id, cantidad, fecha) VALUES
+(1, 1, 1, 1, '17-04-2026'),
+(2, 2, 2, 2, '15-04-2026'),
+(3, 1, 3, 1, '18-04-2026'),
+(4, 4, 3, 1, '18-04-2026');
