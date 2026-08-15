@@ -11,7 +11,7 @@ La idea es que cualquier clase pueda abrirse, leerse y ejecutarse por sí sola, 
 | Python | `Clases_Python/` | 43 | Fundamentos → estructuras de datos → algoritmos → Machine Learning → Deep Learning |
 | C++ | `Clases_C++/` | 15 | Fundamentos, POO, STL y algoritmos de ordenamiento |
 | SQL | `Clases_SQL/` | 8 | DDL, DML, DQL, JOINs, subconsultas y vistas |
-| Flask | `Clases_Flask/` | 1 + proyecto | Microframework web: rutas, servidor de desarrollo |
+| Flask | `Clases_Flask/` | 2 + proyecto | Microframework web: rutas, métodos HTTP y plantillas Jinja2 |
 
 Además:
 
@@ -137,8 +137,18 @@ Son scripts didácticos: no apuntan a ninguna base de datos en particular. Para 
 
 ## Curso de Flask
 
-- `Clases_Flask/Notas-Flask/Clase01.py` — teoría: qué es Flask, Werkzeug y Jinja2, instalación en entorno virtual y estructura mínima de un proyecto.
-- `Clases_Flask/project_flask_traning/app.py` — aplicación de práctica con las rutas `/`, `/acerca` y `/contacto`.
+Las notas son solo teoría (archivos de puros docstrings, no imprimen nada); el proyecto es la parte ejecutable.
+
+| Clase | Tema |
+| --- | --- |
+| 01 | Qué es Flask, Werkzeug y Jinja2, instalación en entorno virtual y estructura mínima de un proyecto |
+| 02 | Métodos HTTP (`methods=[...]`, `@app.get`/`@app.post`), parámetros en la URL y sus convertidores (`string`, `int`, `float`, `path`, `uuid`), el objeto `request`, plantillas Jinja2 y archivos estáticos con `url_for()` |
+
+Proyecto de práctica — `Clases_Flask/project_flask_traning/`:
+
+- `app.py` — versión actual: la ruta `/saludo/<nombre>` renderiza `templates/index.html` con `render_template()`, pasándole `nombre` y `edad`.
+- `templates/index.html` — plantilla Jinja2 con `{{ variable }}`, condicional `{% if %}` / `{% else %}` y ciclo `{% for %}`.
+- `app_obsolete.py` — versión anterior conservada como referencia: rutas `/`, `/acerca`, `/contacto`, `/enviar` (GET y POST), `/usuario/<nombre>`, `/productos/<int:id>`, `/buscar` (`request.args`), `/formulario` (`request.form`) y `/api/datos` (`request.get_json()`).
 
 ---
 
@@ -188,7 +198,7 @@ El entorno virtual `venv/` incluido está dedicado a Flask:
 python Clases_Flask\project_flask_traning\app.py
 ```
 
-El servidor queda en <http://127.0.0.1:5000/> con `debug=True` (recarga automática; nunca usar así en producción).
+El servidor queda en <http://127.0.0.1:5000/> con `debug=True` (recarga automática; nunca usar así en producción). Ojo: `app.py` ya no define la ruta raíz, así que hay que entrar directo a <http://127.0.0.1:5000/saludo/Luis>.
 
 ---
 
